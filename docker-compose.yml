@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ubuntu:
+    container_name: bank_ocr_kata
+    build: .
+    volumes:
+      - ${PWD}:/opt/bank_ocr_kata
+    tty: true

@@ -64,6 +64,13 @@ and ensure that it outputs something similar to
 
     Randomized with seed 41297
 
+If you want to use `Docker`, run
+
+    $ docker-compose up --build
+    $ docker exec -it <docker-image> /bin/bash
+
+to build the docker compose and go into the docker container
+
 ___
 
 ## The kata as presented on the Coding Dojo web site

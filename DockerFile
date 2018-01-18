@@ -1,0 +1,18 @@
+FROM ruby:2.4.2
+
+RUN apt-get -y update && apt-get -y upgrade
+
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+RUN mkdir -p /opt/bank_ocr_kata
+WORKDIR /opt/bank_ocr_kata
+
+ENV HOME /opt/bank_ocr_kata
+
+RUN echo "gem: --no-rdoc --no-ri" >> ~/.gemrc
+RUN gem install bundler
+
+ADD Gemfile /opt/bank_ocr_kata
+
+RUN bundle install -j 4
